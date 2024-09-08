@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Elettrico</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            background-color: black;
+        }
+        /* GUI in alto a destra */
+        #gui {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #caricaValue {
+            display: inline-block;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- GUI -->
+    <div id="gui">
+        <label for="carica">Carica: <span id="caricaValue">0</span></label>
+        <input type="range" id="carica" min="-100" max="100" value="0">
+        <button id="piazzaCarica">Piazza carica</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
