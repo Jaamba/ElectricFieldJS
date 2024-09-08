@@ -1,16 +1,23 @@
 // Variabili per la GUI
 let caricaSelezionata = 0;
+let massaSelezionata = 0;
 let piazzaCaricaAttivo = false;
 
 // Riferimenti agli elementi della GUI
-const slider = document.getElementById('carica');
+const sliderCarica = document.getElementById('carica');
+const sliderMassa = document.getElementById('massa');
 const caricaValue = document.getElementById('caricaValue');
+const massaValue = document.getElementById('massaValue');
 const bottonePiazzaCarica = document.getElementById('piazzaCarica');
 
 // Aggiorna il valore mostrato accanto allo slider quando viene cambiato
-slider.addEventListener('input', () => {
-    caricaSelezionata = parseInt(slider.value);
+sliderCarica.addEventListener('input', () => {
+    caricaSelezionata = parseInt(sliderCarica.value);
     caricaValue.textContent = caricaSelezionata;
+});
+sliderMassa.addEventListener('input', () => {
+    massaSelezionata = parseInt(sliderMassa.value);
+    massaValue.textContent = massaSelezionata;
 });
 
 // Quando viene premuto il bottone, attiva il piazzamento della carica
@@ -28,7 +35,7 @@ canvas.addEventListener('click', (event) => {
         const mouseY = (event.clientY - rect.top - cameraY) / zoom;
 
         // Crea una nuova carica e aggiungila all'array
-        const nuovaCarica = new CaricaElettrica(mouseX, mouseY, 0, 0, caricaSelezionata, true, 0);
+        const nuovaCarica = new CaricaElettrica(mouseX, mouseY, 0, 0, caricaSelezionata, massaSelezionata, true, 0);
         cariche.push(nuovaCarica);
 
         // Disattiva la modalità di piazzamento

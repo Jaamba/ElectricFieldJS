@@ -1,6 +1,6 @@
 // Creare un array di cariche elettriche
 const cariche = [
-    new CaricaElettrica(500, 250, 0, 0, 1, true, 0),
+    new CaricaElettrica(500, 250, 0, 0, 1, 1, true, 0),
 ];
 
 // Funzione per disegnare le cariche e il campo elettrico

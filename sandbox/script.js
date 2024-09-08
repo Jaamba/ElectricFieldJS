@@ -45,14 +45,19 @@ window.addEventListener('keydown', gestisciMovimento);
 
 // Classe CaricaElettrica rimane la stessa
 class CaricaElettrica {
-    constructor(x, y, vx, vy, carica, moves, angoloIniziale) {
+    constructor(x, y, vx, vy, carica, massa, moves, angoloIniziale) {
         this.x = x;
         this.y = y;
         this.vx = vx;
         this.vy = vy;
         this.carica = carica;
         this.radius = 10;
-        this.moves = moves
+        this.moves = moves;
+        
+        if(massa > 0) {
+            this.massa = massa;
+        }
+        else this.massa = 0.00000001;
 
         this.velFactor = 1500;
         this.posFactor = 500;
@@ -91,8 +96,8 @@ class CaricaElettrica {
                 }
             });
 
-            this.vx += vettoreTotaleX*this.velFactor*dt;
-            this.vy += vettoreTotaleY*this.velFactor*dt;
+            this.vx += vettoreTotaleX*this.velFactor*dt/this.massa;
+            this.vy += vettoreTotaleY*this.velFactor*dt/this.massa;
         }
 
         
