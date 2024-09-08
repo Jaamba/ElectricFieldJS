@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Elettrico</title>
+    <link rel="stylesheet" href="../sandbox/gui.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- GUI -->
+    <div id="gui">
+        <label for="carica">Carica: <span id="caricaValue">0</span></label>
+        <input type="range" id="carica" min="-100" max="100" value="0">
+        <label for="massa">Massa: <span id="massaValue">0</span></label>
+        <input type="range" id="massa" min="0" max="100" value="0">
+        <button id="piazzaCarica">Piazza carica</button>
+    </div>
+
+    <script src="../sandbox/gui.js"></script>
+    <script src="../sandbox/script.js"></script>
+    <script src="orbit.js"></script>
+
+</body>
+</html>
