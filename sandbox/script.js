@@ -57,7 +57,7 @@ class CaricaElettrica {
         if(massa > 0) {
             this.massa = massa;
         }
-        else this.massa = 0.00000001;
+        else this.massa = 0.01;
 
         this.velFactor = 1500;
         this.posFactor = 500;
@@ -185,8 +185,8 @@ function motoCircolare(carica, centroX, centroY, raggio, velocita) {
     if(raggio > 0) {
         carica.angolo += dt;
 
-        carica.x = raggio*Math.cos(carica.angolo*velocita);
-        carica.y = raggio*Math.sin(carica.angolo*velocita);
+        carica.x = centroX + raggio*Math.cos(carica.angolo*velocita);
+        carica.y = centroY + raggio*Math.sin(carica.angolo*velocita);
 
         //sistema l'angolo
         if(carica.angolo > 2*Math.PI/velocita) {
