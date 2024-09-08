@@ -14,15 +14,23 @@ body {
 }
 
 /* Stile del titolo */
-h1 {
+.title-container h1 {
     color: white;
     font-size: 3em;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: -10px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombra per rendere il testo leggibile su sfondi chiari */
     background-color: rgba(0, 0, 0, 0.5); /* Sfondo trasparente: nero con 50% di opacità */
     padding: 10px; /* Spazio intorno al testo */
     border-radius: 10px; /* Angoli arrotondati per un effetto più morbido */
+}
+
+.title-container h2 {
+    font-size: 1.5em;
+    margin: 10px 0 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8); /* Colore leggermente meno intenso rispetto al titolo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Ombra per migliorare la leggibilità */
 }
 
 /* Stile dei bottoni */
@@ -44,5 +52,28 @@ h1 {
 
 /* Cambia colore al passaggio del mouse */
 .button-list button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Stile per il bottone delle impostazioni */
+.settings-button {
+    position: fixed; /* Fissa il bottone in una posizione fissa */
+    bottom: 20px; /* Distanza dal fondo */
+    right: 20px; /* Distanza dal lato sinistro */
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Rimuove la sottolineatura del link */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambia colore al passaggio del mouse */
+.settings-button:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
